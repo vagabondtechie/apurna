@@ -19,6 +19,8 @@ public final class SkylineAlgorithmFactory {
 			return new BucketAlgorithm();
 		} else if (algoType == ALGOTYPE.NAIVE) {
 			return new NaiveAlgorithm();
+		} else if (algoType == ALGOTYPE.BUCKET) {
+			return new BucketAlgorithm();
 		}
 		return new BucketAlgorithm();
 	}

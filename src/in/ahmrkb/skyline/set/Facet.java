@@ -120,8 +120,6 @@ public class Facet {
 			if (Math.abs(first.get(i) - second.get(i)) > ProjectValues.ERROR)
 				return false;
 		}
-
 		return true;
 	}
-
 }

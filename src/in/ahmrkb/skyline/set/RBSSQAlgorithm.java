@@ -13,6 +13,14 @@ import java.util.PriorityQueue;
 import org.ejml.alg.dense.mult.VectorVectorMult;
 
 public class RBSSQAlgorithm extends SkylineAlgorithm {
+	
+	@Override
+	public ArrayList<Tuple> computeSkylineTuples() {
+		System.out.println(System.currentTimeMillis());
+		ArrayList<Tuple> resultSet = generateSkylineSets();
+		System.out.println(System.currentTimeMillis());
+		return resultSet;
+	}
 
 	public ArrayList<Tuple> generateSkylineSets() {
 		generateInitNormalVectors();
@@ -119,14 +127,6 @@ public class RBSSQAlgorithm extends SkylineAlgorithm {
 	static ArrayList<Tuple> convexSkylineSet = new ArrayList<>();
 	static ArrayList<Facet> facetsSeenTillNow = new ArrayList<>();
 
-	@Override
-	public ArrayList<Tuple> getSkylineTuples() {
-		System.out.println(System.currentTimeMillis());
-		ArrayList<Tuple> resultSet = generateSkylineSets();
-		System.out.println(System.currentTimeMillis());
-		return resultSet;
-	}
-	
 	private boolean wasFacetEncounteredBefore(Facet current) {
 		for (Facet facet : facetsSeenTillNow) {
 			if (facet.equals(current))

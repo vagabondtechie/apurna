@@ -1,9 +1,19 @@
 package in.ahmrkb.prj;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public abstract class SkylineAlgorithm {
-	public abstract ArrayList<Tuple> getSkylineTuples();
+	protected abstract ArrayList<Tuple> computeSkylineTuples();
+
+	public ArrayList<Tuple> getSkylineTuples() {
+		long startTime = System.currentTimeMillis();
+		ArrayList<Tuple> result = computeSkylineTuples();
+		System.out.println("*************\n** Results **\n*************\n\n" + result + "\n\n");
+		System.out.println("Time taken: "
+				+ (System.currentTimeMillis() - startTime) + " ms");
+		return result;
+	}
 
 	public static enum ALGOTYPE {
 		PRIVATE, DEFAULT, NAIVE, BUCKET

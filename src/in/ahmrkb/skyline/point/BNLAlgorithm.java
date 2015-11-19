@@ -1,6 +1,7 @@
 package in.ahmrkb.skyline.point;
 
 import in.ahmrkb.prj.Database;
+import in.ahmrkb.prj.ProjectValues;
 import in.ahmrkb.prj.ProjectValues.DOMINATOR;
 import in.ahmrkb.prj.SkylineAlgorithm;
 import in.ahmrkb.prj.Tuple;
@@ -12,13 +13,11 @@ import java.util.LinkedList;
 public class BNLAlgorithm extends SkylineAlgorithm {
 
 	@Override
-	public ArrayList<Tuple> getSkylineTuples() {
+	public ArrayList<Tuple> computeSkylineTuples() {
 		ArrayList<Integer> queryDims = new ArrayList<>();
-		queryDims.add(0);
-		queryDims.add(1);
-		// queryDims.add(2);
-		// queryDims.add(3);
-		// queryDims.add(4);
+		for (int i = 0; i < ProjectValues.DIM_SIZE; i++) {
+			queryDims.add(i);
+		}
 		return findSkylineSet(Database.getTuples(), queryDims);
 	}
 

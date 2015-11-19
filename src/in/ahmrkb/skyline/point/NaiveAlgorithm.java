@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class NaiveAlgorithm extends SkylineAlgorithm {
 	@Override
-	public ArrayList<Tuple> getSkylineTuples() {
+	public ArrayList<Tuple> computeSkylineTuples() {
 		boolean dominated = false;
 		ArrayList<Tuple> resultSet = new ArrayList<>();
 		Tuple first, second;

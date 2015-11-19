@@ -10,15 +10,15 @@ import java.text.DecimalFormat;
 
 public class SyntheticDataGenerator {
 	private static int dim = ProjectValues.DIM_SIZE;
-	private static int minReqd = 3;
-	private static int datapoints = 1000000;
+	private static int minReqd = 1;
+	private static int datapoints = 100000;
 
 	public static void main(String[] args) {
 		File file = new File("/data/ip.txt");
 		FileOutputStream fos = null;
 		double value, probability;
 		int addedTillNow;
-		long lValue;
+//		long lValue;
 		DecimalFormat formatter = new DecimalFormat("0.0000000000");
 		byte[] tab = "\t".getBytes();
 		byte[] newline = System.getProperty("line.separator").getBytes();
@@ -33,15 +33,17 @@ public class SyntheticDataGenerator {
 						fos.write(tab);
 					if (dim - j + 1 <= minReqd - addedTillNow) {
 						value = Math.random();
-						lValue = (long)(value * 10);
-						fos.write(formatter.format(lValue).getBytes());
+//						lValue = (long)(value * 10);
+//						fos.write(formatter.format(lValue).getBytes());
+						fos.write(formatter.format(value).getBytes());
 						addedTillNow++;
 					} else {
 						probability = Math.random();
 						if (probability > 0.5) {
 							value = Math.random();
-							lValue = (long)(value * 10);
-							fos.write(formatter.format(lValue).getBytes());
+//							lValue = (long)(value * 10);
+//							fos.write(formatter.format(lValue).getBytes());
+							fos.write(formatter.format(value).getBytes());
 							addedTillNow++;
 						} else {
 							fos.write(formatter.format(

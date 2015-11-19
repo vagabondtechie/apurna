@@ -76,7 +76,7 @@ public class Tuple {
 
 	@Override
 	public String toString() {
-		return "Dimensions: " + dimensions + ", Values: "
-				+ Arrays.toString(values.getData()) + ProjectValues.NEWLINE;
+		return "\nValues: " + Arrays.toString(values.getData())
+				+ ProjectValues.NEWLINE;
 	}
 }
