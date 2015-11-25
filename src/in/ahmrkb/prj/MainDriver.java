@@ -10,7 +10,7 @@ public class MainDriver {
 		Database.readValuesIntoDB("/data/ip.txt"); // Input file name
 
 		SkylineAlgorithm algorithm = SkylineAlgorithmFactory
-				.getSkylineAlgorithm(ALGOTYPE.BUCKET);
+				.getSkylineAlgorithm(ALGOTYPE.NAIVE);
 
 		algorithm.getSkylineTuples();
 	}
